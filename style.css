@@ -1,4 +1,4 @@
-/* Core Configurations */
+/* Document Reset Configuration */
 * {
   margin: 0;
   padding: 0;
@@ -6,172 +6,260 @@
 }
 
 body {
-  background-color: #0f172a;
+  background-color: #f0f2f5;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
 }
 
-/* Banner Core Container Layer */
+/* Banner Main Studio Frame Canvas */
 .banner-canvas {
   position: relative;
   width: 100%;
-  max-width: 1050px;
-  height: 520px;
-  background: linear-gradient(135deg, #02163b 0%, #031c46 50%, #01102b 100%);
+  max-width: 1100px;
+  height: 600px;
+  background-color: #faf9f5; /* Off-white warm background */
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-/* --- Deep Ambient Lights --- */
-.glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  pointer-events: none;
-  opacity: 0.65;
-}
-.glow-top-left {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, #3b20bd 0%, transparent 70%);
-  top: -60px;
-  left: -40px;
-}
-.glow-bottom-right {
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, #3e16b5 0%, transparent 75%);
-  bottom: -90px;
-  right: -5px;
-}
-.glow-bottom-left {
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, #8347da 0%, transparent 70%);
-  bottom: -110px;
-  left: -40px;
-  opacity: 0.5;
-}
-
-/* --- Layout Assembly --- */
-.content-layer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
 }
 
-/* Main Heading Typography Styles */
-.brand-heading {
-  font-weight: 800;
-  font-size: 4.15rem;
-  color: #ffffff;
-  letter-spacing: -0.5px;
-  text-align: center;
-  z-index: 10;
-  width: 95%;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Slogan Container Block */
-.slogan-container {
-  background: rgba(255, 255, 255, 0.96);
-  padding: 8px 32px;
-  margin-top: 18px;
-  transform: skewX(-7deg); /* Mimics the clean angled edge cuts */
-  border-radius: 2px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  z-index: 10;
-}
-
-.slogan-text {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: #031c46;
-  transform: skewX(7deg); /* Corrects font perspective warping */
-  letter-spacing: 0.2px;
-}
-
-/* --- Holographic Iridescent Rings (Pure CSS 3D Simulation) --- */
-.torus-wrapper {
+/* --- Organic Watercolor Background Simulator --- */
+.watercolor-overlay {
   position: absolute;
-  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
-.torus-ring {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 44px solid transparent;
-  /* Complex overlay background gradients to simulate reflective chrome surface mapping */
-  background-image: 
-    linear-gradient(#031c46, #031c46), 
-    linear-gradient(140deg, #74ebd5 0%, #9face6 25%, #f77062 50%, #fe71cd 75%, #a1c4fd 100%);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-shadow: 
-    inset 0 0 20px rgba(255, 255, 255, 0.4), 
-    0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.torus-left {
-  top: 100px;
-  left: 90px;
-  transform: rotateX(40deg) rotateY(-45deg) rotateZ(15deg) scale(1.05);
-  z-index: 2; /* Sits subtly behind the title typography initial cut-off loop */
-}
-
-.torus-right {
-  bottom: 50px;
-  right: 110px;
-  transform: rotateX(55deg) rotateY(-35deg) rotateZ(-30deg) scale(0.95);
-  z-index: 11;
-}
-
-/* --- Contact Badges Footer Layout --- */
-.contact-footer {
+.splash-layer {
   position: absolute;
-  bottom: 24px;
-  left: 32px;
+  border-radius: 50%;
+  filter: blur(45px);
+  mix-blend-mode: multiply; /* Allows layers to naturally wash together */
+}
+
+.core-splash {
+  width: 460px;
+  height: 390px;
+  background: rgba(146, 219, 187, 0.65);
+  top: 80px;
+  left: 280px;
+}
+
+.left-splash {
+  width: 340px;
+  height: 290px;
+  background: rgba(162, 226, 195, 0.55);
+  top: 130px;
+  left: 170px;
+}
+
+.right-splash {
+  width: 390px;
+  height: 350px;
+  background: rgba(131, 212, 182, 0.6);
+  top: 60px;
+  left: 510px;
+}
+
+.bottom-splash {
+  width: 310px;
+  height: 260px;
+  background: rgba(154, 223, 201, 0.45);
+  bottom: 70px;
+  left: 360px;
+}
+
+/* Random background splatters and droplets */
+.water-drop {
+  position: absolute;
+  background: rgba(131, 212, 182, 0.7);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+.drop-left-1 { width: 14px; height: 14px; bottom: 85px; left: 305px; }
+.drop-left-2 { width: 8px; height: 8px; bottom: 120px; left: 275px; }
+.drop-right-1 { width: 10px; height: 10px; top: 165px; left: 630px; opacity: 0.8; }
+
+/* --- Corner Decorative Artifacts --- */
+/* Top left paint marks */
+.decor-top-left {
+  position: absolute;
+  top: -15px;
+  left: 45px;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 12;
+  gap: 12px;
 }
 
-.badge-row {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 246, 255, 0.92) 88%, transparent 100%);
-  padding: 6px 65px 6px 16px;
-  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%); /* Perfect precise skewed corner cutoff */
-  min-width: 360px;
+.decor-top-left span {
+  background-color: #7a7774;
+  display: block;
+  border-radius: 10px;
 }
 
-.badge-text {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #032152;
-  letter-spacing: 0.5px;
+.stroke-1 { width: 22px; height: 60px; transform: skewY(-10deg); opacity: 0.8; }
+.stroke-2 { width: 18px; height: 95px; transform: skewY(-10deg); background-color: #5e5c5a !important; }
+.stroke-3 { width: 20px; height: 45px; transform: skewY(-10deg); opacity: 0.6; }
+
+/* Bottom right stone blob shapes */
+.decor-bottom-right {
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+  z-index: 2;
+}
+
+.decor-bottom-right span {
+  position: absolute;
+  background-color: #8c8986;
   display: block;
 }
 
-/* --- Responsive Adaptability scaling rules --- */
-@media (max-width: 850px) {
-  .banner-canvas { height: auto; padding: 70px 20px; }
-  .brand-heading { font-size: 2.6rem; }
-  .slogan-container { padding: 8px 16px; width: 90%; text-align: center; }
-  .slogan-text { font-size: 0.85rem; }
-  .torus-left { transform: scale(0.6); left: -20px; top: 20px; }
-  .torus-right { transform: scale(0.6); right: -20px; bottom: 0; }
-  .contact-footer { position: relative; margin-top: 50px; left: 0; bottom: 0; width: 100%; align-items: center; }
-  .badge-row { min-width: 290px; padding-right: 30px; clip-path: none; border-radius: 4px; text-align: center;}
+.pebble-large {
+  width: 75px;
+  height: 175px;
+  bottom: 50px;
+  right: 15px;
+  border-radius: 35px 35px 40px 30px;
+  transform: rotate(4deg);
+  background-color: #999693 !important;
+}
+
+.pebble-medium {
+  width: 45px;
+  height: 120px;
+  bottom: -10px;
+  right: 115px;
+  border-radius: 20px 25px 20px 20px;
+  transform: rotate(-3deg);
+  background-color: #72706d !important;
+}
+
+.pebble-small {
+  width: 30px;
+  height: 55px;
+  bottom: 40px;
+  right: -5px;
+  border-radius: 15px;
+  opacity: 0.3;
+}
+
+/* --- Layout Component Assembly --- */
+.content-wrapper {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 88%;
+  max-width: 960px;
+  margin-top: -15px; /* Aligns layout organically against lower subtitle text */
+}
+
+/* Logo Box Container */
+.logo-box {
+  width: 195px;
+  height: 195px;
+  flex-shrink: 0;
+}
+
+.logo-box svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dividing Pillar Line */
+.divider-line {
+  width: 7px;
+  height: 225px;
+  background-color: #000000;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* Typography Core Design System */
+.text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 4.1rem;
+  color: #000000;
+  letter-spacing: 2px;
+  line-height: 0.95;
+}
+
+.tagline-row {
+  font-weight: 700;
+  font-size: 1.62rem;
+  color: #000000;
+  letter-spacing: 4.5px;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.tagline-row .bar {
+  font-weight: 400;
+  margin: 0 14px;
+  font-size: 1.5rem;
+}
+
+.program-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 2.35rem;
+  color: #27312c; /* The exact dark charcoal tone seen in the original graphic */
+  margin-top: 55px;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive Adaptive Fluid Breakpoints */
+@media (max-width: 900px) {
+  .banner-canvas {
+    height: auto;
+    padding: 80px 20px;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    margin-top: 0;
+  }
+
+  .divider-line {
+    width: 180px;
+    height: 6px;
+  }
+
+  .brand-title {
+    font-size: 2.8rem;
+  }
+
+  .tagline-row {
+    font-size: 1.1rem;
+    justify-content: center;
+    letter-spacing: 2px;
+  }
+  
+  .tagline-row .bar {
+    margin: 0 6px;
+  }
+
+  .program-title {
+    margin-top: 30px;
+    font-size: 1.8rem;
+  }
 }
