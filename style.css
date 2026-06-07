@@ -1,0 +1,177 @@
+/* Core Configurations */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Banner Core Container Layer */
+.banner-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  height: 520px;
+  background: linear-gradient(135deg, #02163b 0%, #031c46 50%, #01102b 100%);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* --- Deep Ambient Lights --- */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.65;
+}
+.glow-top-left {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #3b20bd 0%, transparent 70%);
+  top: -60px;
+  left: -40px;
+}
+.glow-bottom-right {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #3e16b5 0%, transparent 75%);
+  bottom: -90px;
+  right: -5px;
+}
+.glow-bottom-left {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #8347da 0%, transparent 70%);
+  bottom: -110px;
+  left: -40px;
+  opacity: 0.5;
+}
+
+/* --- Layout Assembly --- */
+.content-layer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Heading Typography Styles */
+.brand-heading {
+  font-weight: 800;
+  font-size: 4.15rem;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-align: center;
+  z-index: 10;
+  width: 95%;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Slogan Container Block */
+.slogan-container {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 8px 32px;
+  margin-top: 18px;
+  transform: skewX(-7deg); /* Mimics the clean angled edge cuts */
+  border-radius: 2px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.slogan-text {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #031c46;
+  transform: skewX(7deg); /* Corrects font perspective warping */
+  letter-spacing: 0.2px;
+}
+
+/* --- Holographic Iridescent Rings (Pure CSS 3D Simulation) --- */
+.torus-wrapper {
+  position: absolute;
+  perspective: 1000px;
+  pointer-events: none;
+}
+
+.torus-ring {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 44px solid transparent;
+  /* Complex overlay background gradients to simulate reflective chrome surface mapping */
+  background-image: 
+    linear-gradient(#031c46, #031c46), 
+    linear-gradient(140deg, #74ebd5 0%, #9face6 25%, #f77062 50%, #fe71cd 75%, #a1c4fd 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 
+    inset 0 0 20px rgba(255, 255, 255, 0.4), 
+    0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.torus-left {
+  top: 100px;
+  left: 90px;
+  transform: rotateX(40deg) rotateY(-45deg) rotateZ(15deg) scale(1.05);
+  z-index: 2; /* Sits subtly behind the title typography initial cut-off loop */
+}
+
+.torus-right {
+  bottom: 50px;
+  right: 110px;
+  transform: rotateX(55deg) rotateY(-35deg) rotateZ(-30deg) scale(0.95);
+  z-index: 11;
+}
+
+/* --- Contact Badges Footer Layout --- */
+.contact-footer {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 12;
+}
+
+.badge-row {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 246, 255, 0.92) 88%, transparent 100%);
+  padding: 6px 65px 6px 16px;
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%); /* Perfect precise skewed corner cutoff */
+  min-width: 360px;
+}
+
+.badge-text {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #032152;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* --- Responsive Adaptability scaling rules --- */
+@media (max-width: 850px) {
+  .banner-canvas { height: auto; padding: 70px 20px; }
+  .brand-heading { font-size: 2.6rem; }
+  .slogan-container { padding: 8px 16px; width: 90%; text-align: center; }
+  .slogan-text { font-size: 0.85rem; }
+  .torus-left { transform: scale(0.6); left: -20px; top: 20px; }
+  .torus-right { transform: scale(0.6); right: -20px; bottom: 0; }
+  .contact-footer { position: relative; margin-top: 50px; left: 0; bottom: 0; width: 100%; align-items: center; }
+  .badge-row { min-width: 290px; padding-right: 30px; clip-path: none; border-radius: 4px; text-align: center;}
+}
